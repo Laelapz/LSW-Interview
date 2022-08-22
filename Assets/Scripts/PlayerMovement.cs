@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _Input = new InputActions();
         _Rigidbody = GetComponent<Rigidbody2D>();
-        _SpriteRenderer = GetComponent<SpriteRenderer>();
         _Animator = GetComponent<Animator>();
     }
 
