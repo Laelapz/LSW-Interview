@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15.9
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -6653,11 +6653,11 @@ TextureImporter:
       smallburg_outside_assets_286: -1160261326
       smallburg_outside_assets_195: -1526415363
       smallburg_outside_assets_10: -1773546305
-      smallburg_outside_assets_254: 2000067975
       smallburg_outside_assets_269: 1041231198
+      smallburg_outside_assets_283: -110902957
+      smallburg_outside_assets_254: 2000067975
       smallburg_outside_assets_181: -1054215852
       smallburg_outside_assets_106: -1136430471
-      smallburg_outside_assets_283: -110902957
       smallburg_outside_assets_290: -630968303
       smallburg_outside_assets_46: -2092150660
       smallburg_outside_assets_150: -1089154015
