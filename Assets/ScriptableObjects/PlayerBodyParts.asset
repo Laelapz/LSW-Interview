@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b58537bcbf7c5e41870c708b77c10ad, type: 3}
+  m_Name: PlayerBodyParts
+  m_EditorClassIdentifier: 
+  characterBodyParts:
+  - bodyPartName: Body
+    bodyPart: {fileID: 11400000, guid: 3fa913bdb786a084699e2b629751e158, type: 2}
+  - bodyPartName: Top
+    bodyPart: {fileID: 11400000, guid: 047e4b8bab8050c48b57ed81a7f72551, type: 2}
+  - bodyPartName: Bottom
+    bodyPart: {fileID: 11400000, guid: 2fbba2ab72cddaa479f74f895a104e34, type: 2}

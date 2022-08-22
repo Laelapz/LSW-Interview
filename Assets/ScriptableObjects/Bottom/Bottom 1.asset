@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623026f48d5012044a0f283a95c0c0c0, type: 3}
+  m_Name: Bottom 1
+  m_EditorClassIdentifier: 
+  bodyPartName: Khakis
+  bodyPartId: 1
+  allBodyPartsAnimations:
+  - {fileID: 7400000, guid: ac4059b4f08f8b1498dfd9059ed9a485, type: 2}
+  - {fileID: 7400000, guid: 9c0349d53f687a247909255878900807, type: 2}
+  - {fileID: 7400000, guid: 334d5d207650b8949b555c534c33627a, type: 2}
+  - {fileID: 7400000, guid: a69a55b11b5e7f641a2264747c25c2f6, type: 2}
+  - {fileID: 7400000, guid: 2eafad1cf542bfd45b2ea62d5fd53679, type: 2}

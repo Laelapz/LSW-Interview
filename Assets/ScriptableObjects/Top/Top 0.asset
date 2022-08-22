@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623026f48d5012044a0f283a95c0c0c0, type: 3}
+  m_Name: Top 0
+  m_EditorClassIdentifier: 
+  bodyPartName: Shirt Green
+  bodyPartId: 0
+  allBodyPartsAnimations:
+  - {fileID: 7400000, guid: 42d827bfb39bc9d47b339045a3a9ec2b, type: 2}
+  - {fileID: 7400000, guid: 52bfe9e6a9a3c6a439e1e45ccefe27b2, type: 2}
+  - {fileID: 7400000, guid: a251c66a88665184ca13f04541cc7e10, type: 2}
+  - {fileID: 7400000, guid: 1a67efc388c3c7f4caf25ab31310e73d, type: 2}
+  - {fileID: 7400000, guid: eed7dc65f16c4634bb493b08090d2901, type: 2}
