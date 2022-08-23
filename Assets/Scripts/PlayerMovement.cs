@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField] private float _speed = 3;
+    [SerializeField] private CheckSurroundings _checkSurroundings;
 
     private InputActions _input;
     private Rigidbody2D _rigidbody;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         _input.Player.Move.performed += OnMovement;
         _input.Player.Move.canceled += OnMovement;
+        _input.Player.Interact.performed += OnInteracting;
     }
 
     private void OnDisable()
@@ -37,6 +39,16 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("Horizontal", _movement.x);
         _animator.SetFloat("Vertical", _movement.y);
         _animator.SetFloat("Speed", _movement.sqrMagnitude);
+    }
+
+    private void OnInteracting(InputAction.CallbackContext ctx)
+    {
+        var collision = _checkSurroundings.SearchForInteractable();
+        var interactable = collision.rigidbody.GetComponent<IInteractable>();
+
+        if (interactable == null) return;
+        interactable.Interact();
+
     }
 
     private void Update()

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ public class BodyPartsManager : MonoBehaviour
     private AnimatorOverrideController _animatorOverrideController;
     private AnimationClipOverrides _defaultAnimationClips;
 
-    private void Start()
+    public void Start()
     {
         _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
         _animator.runtimeAnimatorController = _animatorOverrideController;
@@ -26,6 +25,7 @@ public class BodyPartsManager : MonoBehaviour
 
     public void UpdateBodyParts()
     {
+        print("Atualizando");
         for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
 
@@ -38,8 +38,8 @@ public class BodyPartsManager : MonoBehaviour
                 string direction = _characterDirections[directionIndex];
 
                 _animationClip = Resources.Load<AnimationClip>("Animations/" + partType + "/" + partType + "_" + partID + "_" + direction);
-                print("Animations/" + partType + "/" + partType + "_" + partID + "_" + direction);
 
+                if (_defaultAnimationClips[partType + "_" + 0 + "_" + direction]) print(_defaultAnimationClips[partType + "_" + 0 + "_" + direction]);
                 _defaultAnimationClips[partType + "_" + 0 + "_" + direction] = _animationClip;
             }
         }

@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _clothesPanel;
+    [SerializeField] private BodyPartsManager _bodyPartsManager; 
     
     public SO_CharacterBody characterBody;
     public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
-    GameObject _clothesInstance;
+    private void Start()
+    {
+        _bodyPartsManager.Start();
+    }
 
     public void SetupMenu()
     {
