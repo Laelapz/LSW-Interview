@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623026f48d5012044a0f283a95c0c0c0, type: 3}
+  m_Name: Body 1
+  m_EditorClassIdentifier: 
+  bodyPartName: Caucasian Skin
+  bodyPartId: 1
+  allBodyPartsAnimations:
+  - {fileID: 7400000, guid: cdec900776091be429d8d00b9725ea58, type: 2}
+  - {fileID: 7400000, guid: b024a6b4ae7cf2842931d1b052510a0c, type: 2}
+  - {fileID: 7400000, guid: 2f129e84a375b3a4b908213ffc99d5b7, type: 2}
+  - {fileID: 7400000, guid: 7a23650e0c1c41a4094fc8fa02ae6e2b, type: 2}
+  - {fileID: 7400000, guid: 76583b3df917b23468163058a8720f9c, type: 2}

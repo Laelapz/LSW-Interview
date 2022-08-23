@@ -5,12 +5,12 @@ using TMPro;
 
 public class BodyPartsSelector : MonoBehaviour
 {
-    [SerializeField] private SO_CharacterBody characterBody;
-    [SerializeField] private BodyPartSelection[] bodyPartSelections;
+    [SerializeField] public SO_CharacterBody _characterBody;
+    public List<BodyPartSelection> _bodyPartSelections;
 
     void Start()
     {
-        for(int i = 0; i < bodyPartSelections.Length; i++)
+        for(int i = 0; i < _bodyPartSelections.Count; i++)
         {
             GetCurrentBodyPart(i);
         }
@@ -18,21 +18,21 @@ public class BodyPartsSelector : MonoBehaviour
 
     private void GetCurrentBodyPart(int partIndex)
     {
-        bodyPartSelections[partIndex].bodyPartNameTextComponent.text = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartName;
-        bodyPartSelections[partIndex].bodyPartCurrentIndex = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartId;
+        _bodyPartSelections[partIndex].bodyPartNameTextComponent.text = _characterBody.characterBodyParts[partIndex].bodyPart.bodyPartName;
+        _bodyPartSelections[partIndex].bodyPartCurrentIndex = _characterBody.characterBodyParts[partIndex].bodyPart.bodyPartId;
     }
 
     public void NextBodyPart(int partIndex)
     {
         if (ValidateIndexValue(partIndex))
         {
-            if (bodyPartSelections[partIndex].bodyPartCurrentIndex < bodyPartSelections[partIndex].bodyPartOptions.Length - 1)
+            if (_bodyPartSelections[partIndex].bodyPartCurrentIndex < _bodyPartSelections[partIndex].bodyPartOptions.Length - 1)
             {
-                bodyPartSelections[partIndex].bodyPartCurrentIndex++;
+                _bodyPartSelections[partIndex].bodyPartCurrentIndex++;
             }
             else
             {
-                bodyPartSelections[partIndex].bodyPartCurrentIndex = 0;
+                _bodyPartSelections[partIndex].bodyPartCurrentIndex = 0;
             }
 
             UpdateCurrentParts(partIndex);
@@ -43,13 +43,13 @@ public class BodyPartsSelector : MonoBehaviour
     {
         if (ValidateIndexValue(partIndex))
         {
-            if (bodyPartSelections[partIndex].bodyPartCurrentIndex > 0)
+            if (_bodyPartSelections[partIndex].bodyPartCurrentIndex > 0)
             {
-                bodyPartSelections[partIndex].bodyPartCurrentIndex--;
+                _bodyPartSelections[partIndex].bodyPartCurrentIndex--;
             }
             else
             {
-                bodyPartSelections[partIndex].bodyPartCurrentIndex = bodyPartSelections[partIndex].bodyPartOptions.Length - 1;
+                _bodyPartSelections[partIndex].bodyPartCurrentIndex = _bodyPartSelections[partIndex].bodyPartOptions.Length - 1;
             }
 
             UpdateCurrentParts(partIndex);
@@ -58,12 +58,13 @@ public class BodyPartsSelector : MonoBehaviour
 
     public void UpdateCurrentParts(int partIndex)
     {
-        bodyPartSelections[partIndex].bodyPartNameTextComponent.text = bodyPartSelections[partIndex].bodyPartOptions[bodyPartSelections[partIndex].bodyPartCurrentIndex].bodyPartName;
+        _bodyPartSelections[partIndex].bodyPartNameTextComponent.text = _bodyPartSelections[partIndex].bodyPartOptions[_bodyPartSelections[partIndex].bodyPartCurrentIndex].bodyPartName;
+        _characterBody.characterBodyParts[partIndex].bodyPart = _bodyPartSelections[partIndex].bodyPartOptions[_bodyPartSelections[partIndex].bodyPartCurrentIndex];
     }
 
     private bool ValidateIndexValue(int partIndex)
     {
-        if (partIndex > bodyPartSelections.Length || partIndex < 0)
+        if (partIndex > _bodyPartSelections.Count || partIndex < 0)
         {
             Debug.Log("Index value does not match any body parts!");
             return false;

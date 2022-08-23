@@ -4,55 +4,47 @@ using UnityEngine;
 
 public class BodyPartsManager : MonoBehaviour
 {
-    [SerializeField] private SO_CharacterBody characterBody;
+    public SO_CharacterBody _characterBody;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private string[] _bodyPartTypes;
+    [SerializeField] private string[] _characterDirections;
 
-    [SerializeField] private string[] bodyPartTypes;
-    [SerializeField] private string[] characterDirections;
+    private AnimationClip _animationClip;
+    private AnimatorOverrideController _animatorOverrideController;
+    private AnimationClipOverrides _defaultAnimationClips;
 
-    [SerializeField] private Animator animator;
-    private AnimationClip animationClip;
-    private AnimatorOverrideController animatorOverrideController;
-    private AnimationClipOverrides defaultAnimationClips;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        //animator = GetComponent<Animator>();
-        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
-        animator.runtimeAnimatorController = animatorOverrideController;
+        _animatorOverrideController = new AnimatorOverrideController(_animator.runtimeAnimatorController);
+        _animator.runtimeAnimatorController = _animatorOverrideController;
 
-        defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
-        animatorOverrideController.GetOverrides(defaultAnimationClips);
+        _defaultAnimationClips = new AnimationClipOverrides(_animatorOverrideController.overridesCount);
+        _animatorOverrideController.GetOverrides(_defaultAnimationClips);
 
         UpdateBodyParts();
     }
 
-    // Update is called once per frame
     public void UpdateBodyParts()
     {
-        for (int partIndex = 0; partIndex < bodyPartTypes.Length; partIndex++)
+        for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
-            // Get current body part
-            string partType = bodyPartTypes[partIndex];
-            // Get current body part ID
-            string partID = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartId.ToString();
+
+            string partType = _bodyPartTypes[partIndex];
+            string partID = _characterBody.characterBodyParts[partIndex].bodyPart.bodyPartId.ToString();
 
            
-            for (int directionIndex = 0; directionIndex < characterDirections.Length; directionIndex++)
+            for (int directionIndex = 0; directionIndex < _characterDirections.Length; directionIndex++)
             {
-                string direction = characterDirections[directionIndex];
+                string direction = _characterDirections[directionIndex];
 
-                // Get players animation from player body
-                // ***NOTE: Unless Changed Here, Animation Naming Must Be: "[Type]_[Index]_[state]_[direction]" (Ex. Body_0_idle_down)
-                animationClip = Resources.Load<AnimationClip>("Player Animations/" + partType + "/" + partType + "_" + partID + "_" + direction);
+                _animationClip = Resources.Load<AnimationClip>("Animations/" + partType + "/" + partType + "_" + partID + "_" + direction);
+                print("Animations/" + partType + "/" + partType + "_" + partID + "_" + direction);
 
-                // Override default animation
-                defaultAnimationClips[partType + "_" + 0 + "_" + direction] = animationClip;
+                _defaultAnimationClips[partType + "_" + 0 + "_" + direction] = _animationClip;
             }
         }
 
-        // Apply updated animations
-        animatorOverrideController.ApplyOverrides(defaultAnimationClips);
+        _animatorOverrideController.ApplyOverrides(_defaultAnimationClips);
     }
 
     class AnimationClipOverrides : List<KeyValuePair<AnimationClip, AnimationClip>>
