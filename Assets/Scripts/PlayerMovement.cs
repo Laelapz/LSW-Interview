@@ -43,8 +43,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnInteracting(InputAction.CallbackContext ctx)
     {
-        var collision = _checkSurroundings.SearchForInteractable();
-        var interactable = collision.rigidbody.GetComponent<IInteractable>();
+        IInteractable interactable = null;
+        RaycastHit2D collision;
+        collision = _checkSurroundings.SearchForInteractable();
+        if(collision.rigidbody) interactable = collision.rigidbody.GetComponent<IInteractable>();
 
         if (interactable == null) return;
         interactable.Interact();

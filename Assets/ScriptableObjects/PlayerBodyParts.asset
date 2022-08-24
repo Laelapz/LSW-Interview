@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: PlayerBodyParts
   m_EditorClassIdentifier: 
   characterBodyParts:
+  - bodyPartName: Hair
+    bodyPart: {fileID: 11400000, guid: e3b736e5507f2b04b918ca221b0726b2, type: 2}
   - bodyPartName: Body
-    bodyPart: {fileID: 11400000, guid: 3fa913bdb786a084699e2b629751e158, type: 2}
+    bodyPart: {fileID: 11400000, guid: 01eed00eeed78d149980b7f7d57c0c6b, type: 2}
   - bodyPartName: Top
     bodyPart: {fileID: 11400000, guid: 047e4b8bab8050c48b57ed81a7f72551, type: 2}
   - bodyPartName: Bottom
-    bodyPart: {fileID: 11400000, guid: 2fbba2ab72cddaa479f74f895a104e34, type: 2}
+    bodyPart: {fileID: 11400000, guid: e3b736e5507f2b04b918ca221b0726b2, type: 2}

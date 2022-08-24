@@ -39,7 +39,7 @@ public class BodyPartsManager : MonoBehaviour
 
                 _animationClip = Resources.Load<AnimationClip>("Animations/" + partType + "/" + partType + "_" + partID + "_" + direction);
 
-                if (_defaultAnimationClips[partType + "_" + 0 + "_" + direction]) print(_defaultAnimationClips[partType + "_" + 0 + "_" + direction]);
+                if (!_defaultAnimationClips[partType + "_" + 0 + "_" + direction]) print(_defaultAnimationClips[partType + "_" + 0 + "_" + direction]);
                 _defaultAnimationClips[partType + "_" + 0 + "_" + direction] = _animationClip;
             }
         }

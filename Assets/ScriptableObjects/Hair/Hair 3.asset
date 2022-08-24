@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623026f48d5012044a0f283a95c0c0c0, type: 3}
+  m_Name: Hair 3
+  m_EditorClassIdentifier: 
+  bodyPartName: Long Hair 3
+  bodyPartId: 3
+  allBodyPartsAnimations:
+  - {fileID: 7400000, guid: e8d2a9a4a6528ae41bedc2b62559b9f3, type: 2}
+  - {fileID: 7400000, guid: f7b152b311e2f124589a65d6c9174a73, type: 2}
+  - {fileID: 7400000, guid: 11de72e300dea8e4dbecacacab8bd7cd, type: 2}
+  - {fileID: 7400000, guid: 0976ae59b877e764dafbe8085380dfb4, type: 2}
+  - {fileID: 7400000, guid: 6a9a9200f8b1ef64e960b52b997d53f2, type: 2}

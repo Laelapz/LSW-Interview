@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3765000978240998539, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3765000978287699203, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -383,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3765000978916896928, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3765000978916896929, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -651,64 +651,80 @@ PrefabInstance:
       objectReference: {fileID: 7601530052660792879}
     - target: {fileID: 3765000979860243944, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartTypes.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243944, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartTypes.Array.data[0]
-      value: Body
+      value: Hair
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243944, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartTypes.Array.data[1]
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765000979860243944, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+      propertyPath: _bodyPartTypes.Array.data[3]
       value: Top
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[0].bodyPartName
-      value: Body
+      value: Hair
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[1].bodyPartName
-      value: Top
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+      propertyPath: _bodyPartSelections.Array.data[3].bodyPartName
+      value: Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[0].bodyPartNameTextComponent
       value: 
-      objectReference: {fileID: 2905306307607943114}
+      objectReference: {fileID: 4387229223608530547}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[1].bodyPartNameTextComponent
       value: 
-      objectReference: {fileID: 2905306307945337206}
+      objectReference: {fileID: 2905306307607943114}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[2].bodyPartNameTextComponent
       value: 
-      objectReference: {fileID: 2905306309114164292}
+      objectReference: {fileID: 2905306307945337206}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[0].bodyPartOptions.Array.size
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[1].bodyPartOptions.Array.size
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+      propertyPath: _bodyPartSelections.Array.data[3].bodyPartOptions.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[0].bodyPartOptions.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 3fa913bdb786a084699e2b629751e158, type: 2}
+      objectReference: {fileID: 11400000, guid: 8a3588f1a3425d44ba094d265ae0037f, type: 2}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[0].bodyPartOptions.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 2fbba2ab72cddaa479f74f895a104e34, type: 2}
+      objectReference: {fileID: 11400000, guid: 5910ef234bc166142b09654af9fb73d1, type: 2}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[1].bodyPartOptions.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 047e4b8bab8050c48b57ed81a7f72551, type: 2}
+      objectReference: {fileID: 11400000, guid: 3fa913bdb786a084699e2b629751e158, type: 2}
     - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: _bodyPartSelections.Array.data[1].bodyPartOptions.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 2fbba2ab72cddaa479f74f895a104e34, type: 2}
+      objectReference: {fileID: 11400000, guid: 4e061d5d68e3a2c4b95ec8bf28fdeead, type: 2}
+    - target: {fileID: 3765000979860243945, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+      propertyPath: _bodyPartSelections.Array.data[3].bodyPartOptions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e3b736e5507f2b04b918ca221b0726b2, type: 2}
     - target: {fileID: 3862095297405616596, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -807,6 +823,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4387229223608530547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2345479832400119149, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+  m_PrefabInstance: {fileID: 2048646077961958174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4145194164058174228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -841,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 805105542998856154, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005884336755982076, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1748796398937388686, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: m_Layer
@@ -956,6 +987,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartsManager: {fileID: 2905306307344611062}
   bodyPartsSelector: {fileID: 2905306307344611063}
+  hairBodyParts:
+  - {fileID: 11400000, guid: 8a3588f1a3425d44ba094d265ae0037f, type: 2}
+  - {fileID: 11400000, guid: 5910ef234bc166142b09654af9fb73d1, type: 2}
+  - {fileID: 11400000, guid: 42d1e3d07ee88454193647eb96a192f1, type: 2}
+  - {fileID: 11400000, guid: 8170968c703c00740af5cf6e547d7baa, type: 2}
+  - {fileID: 11400000, guid: 55a16909a153ced4cbdaaa69be47d805, type: 2}
+  - {fileID: 11400000, guid: 0b30786eedbb3de4dbc903d867ef91c9, type: 2}
   bodyBodyParts:
   - {fileID: 11400000, guid: 3fa913bdb786a084699e2b629751e158, type: 2}
   - {fileID: 11400000, guid: 4e061d5d68e3a2c4b95ec8bf28fdeead, type: 2}
@@ -967,11 +1005,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2fbba2ab72cddaa479f74f895a104e34, type: 2}
   _checkSurroundings: {fileID: 675509071820237240}
   _interactableAnimation: {fileID: 7135888701310769944}
-  animator: {fileID: 7601530052660792879}
+  _animator: {fileID: 7601530052660792879}
   _clothesPanel: {fileID: 2905306307344611064}
   _rigidbody: {fileID: 4507867061942187846}
+  canWalk: 1
   npcBody: {fileID: 0}
   inventoryParts:
+  - bodyPartName: Hair
+    bodyPartOptions:
+    - {fileID: 11400000, guid: 8a3588f1a3425d44ba094d265ae0037f, type: 2}
+    - {fileID: 11400000, guid: 5910ef234bc166142b09654af9fb73d1, type: 2}
+    - {fileID: 11400000, guid: 42d1e3d07ee88454193647eb96a192f1, type: 2}
+    - {fileID: 11400000, guid: 8170968c703c00740af5cf6e547d7baa, type: 2}
+    - {fileID: 11400000, guid: 55a16909a153ced4cbdaaa69be47d805, type: 2}
+    - {fileID: 11400000, guid: 0b30786eedbb3de4dbc903d867ef91c9, type: 2}
+    bodyPartNameTextComponent: {fileID: 4387229223608530547}
+    bodyPartCurrentIndex: 0
   - bodyPartName: Body
     bodyPartOptions:
     - {fileID: 11400000, guid: 3fa913bdb786a084699e2b629751e158, type: 2}
