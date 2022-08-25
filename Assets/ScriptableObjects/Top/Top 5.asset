@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: White Shirt
   bodyPartId: 5
+  icon: {fileID: 49329183, guid: f74190496a905c840abd3cda440913dc, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 3aa4973cb965cc04c9a4e5eabf967337, type: 2}
   - {fileID: 7400000, guid: b2a2b889fb307c344939e3001bf22a8b, type: 2}

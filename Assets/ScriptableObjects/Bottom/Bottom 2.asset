@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Blue Pants
   bodyPartId: 2
+  icon: {fileID: -1460780942, guid: 1b7546261756bc944a713c7fd31b553d, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 9e1fa9ccdef50714193770d52f4b7e23, type: 2}
   - {fileID: 7400000, guid: e089a1be95ea3a14096a92aa5bb54b72, type: 2}

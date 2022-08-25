@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Shirt Green
   bodyPartId: 0
+  icon: {fileID: 1760461372, guid: 59fb21f51e8f1b443865367f055cd7f1, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 42d827bfb39bc9d47b339045a3a9ec2b, type: 2}
   - {fileID: 7400000, guid: 52bfe9e6a9a3c6a439e1e45ccefe27b2, type: 2}

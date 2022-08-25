@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Caucasian Skin
   bodyPartId: 1
+  icon: {fileID: 2087664171, guid: 621ba6109b7f6634a9927f68abf08b02, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: cdec900776091be429d8d00b9725ea58, type: 2}
   - {fileID: 7400000, guid: b024a6b4ae7cf2842931d1b052510a0c, type: 2}

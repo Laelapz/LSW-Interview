@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Pastel Pants
   bodyPartId: 4
+  icon: {fileID: 1495273482, guid: a0103c2e5d4a1af4eb794d3f65c4ff4a, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: da71de135f5ffbe47ab799f28d8595c0, type: 2}
   - {fileID: 7400000, guid: 73135400f4d0d5e439cc4cd28cfa760f, type: 2}

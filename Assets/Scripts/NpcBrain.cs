@@ -23,7 +23,6 @@ public class NpcBrain : MonoBehaviour, IInteractable
     [SerializeField] Image _image;
     [SerializeField] Sprite[] _moodIcons;
     [SerializeField] TMP_Text[] _bodyOptionsText;
-    public Collider2D _door;
     [SerializeField] Collider2D myCollider;
     public Transform[] path;
     

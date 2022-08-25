@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Overhall
   bodyPartId: 4
+  icon: {fileID: -550714446, guid: 7aa1b06152e013b459892175029c85da, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 491524e6062393842bc83608c1d6e985, type: 2}
   - {fileID: 7400000, guid: 723d1e8ceb79f674eb2944067b1e7de9, type: 2}

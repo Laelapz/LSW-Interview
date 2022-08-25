@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Long Hair 5
   bodyPartId: 5
+  icon: {fileID: -800470049, guid: 2ec30c68e4770c84d8f95ba9a87bf4f5, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 52f9ecb1a17aac4468df4d53b23007ac, type: 2}
   - {fileID: 7400000, guid: dc508f01385ec3643a13908105326fa6, type: 2}

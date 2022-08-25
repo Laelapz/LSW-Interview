@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Blogger Shirt
   bodyPartId: 1
+  icon: {fileID: -1474762097, guid: 88c5915694a199d408e43d9c0b9e7994, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: fb73d742986d61343a5dc6de5e08e231, type: 2}
   - {fileID: 7400000, guid: 24b39fc157fc35041a58896726b9b413, type: 2}

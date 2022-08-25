@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Shaky Pants
   bodyPartId: 3
+  icon: {fileID: -1790129445, guid: f6f9c1c9a429a4447889d80e07a02a5a, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 21a05f1f3bdea1f4f8001b8b4551fa35, type: 2}
   - {fileID: 7400000, guid: fc2f7fcf117dc104b942cb4909fb250d, type: 2}

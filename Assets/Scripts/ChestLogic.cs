@@ -6,6 +6,7 @@ public class ChestLogic : MonoBehaviour, IInteractable
 {
     [SerializeField] CheckSurroundings _checkSurroundings;
     [SerializeField] InteractableAnimation _interactableAnimation;
+    [SerializeField] InventoryManager _inventoryManager;
 
     private void Update()
     {
@@ -23,6 +24,6 @@ public class ChestLogic : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        print("Abrir menu");
+        _inventoryManager.OpenInventory();
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Dark Skin
   bodyPartId: 0
+  icon: {fileID: 400793110, guid: 884e40b8f61095b419803efd839bc1b0, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 7db6498f0838ea640bbb4072c1648764, type: 2}
   - {fileID: 7400000, guid: f917ff781e199b44ebb342f2114b4d4d, type: 2}

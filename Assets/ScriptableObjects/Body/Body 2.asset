@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Indian Skin
   bodyPartId: 2
+  icon: {fileID: 122981162, guid: bb2fcb23467141a4c81db204496e517f, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 3a6826c84224be648a9517901d1ab81b, type: 2}
   - {fileID: 7400000, guid: 4cb810733de903f47b93a8e9b21d2553, type: 2}

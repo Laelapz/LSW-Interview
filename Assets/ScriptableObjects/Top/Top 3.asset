@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Dark Shirt
   bodyPartId: 3
+  icon: {fileID: 314360528, guid: 3893dde84f46b704aa644e9d33697229, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 5f8cd1757a66fb04484d90280b3840f1, type: 2}
   - {fileID: 7400000, guid: ef204036ade96a24382e756bf1d634d6, type: 2}

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Khakis
   bodyPartId: 1
+  icon: {fileID: 582707157, guid: ae965d8d3561c0d43a02276fdd989771, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: ac4059b4f08f8b1498dfd9059ed9a485, type: 2}
   - {fileID: 7400000, guid: 9c0349d53f687a247909255878900807, type: 2}

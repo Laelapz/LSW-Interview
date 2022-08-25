@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Blue Shirt
   bodyPartId: 2
+  icon: {fileID: -647738342, guid: 0af58bcb99f35824395edaceabbf3b04, type: 3}
   allBodyPartsAnimations:
   - {fileID: 7400000, guid: 6e64f8d11a6b6b14081f977b1fe6b70b, type: 2}
   - {fileID: 7400000, guid: 261d6be8a06235746895ffaa8a37e884, type: 2}
