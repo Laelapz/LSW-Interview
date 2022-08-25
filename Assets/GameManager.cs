@@ -9,14 +9,18 @@ public class GameManager : MonoBehaviour
 
     private bool _isOpened = false;
     private bool _canSpawnNpc = true;
+    public int actualMoney = 0;
     public int actualNpcNumber = 0;
     public int maxNpcCapacity = 5;
 
     public float instantiateCooldown = 10f;
 
     [SerializeField] TMP_Text _isOpenedText;
+    [SerializeField] TMP_Text _moneyValueText;
     [SerializeField] GameObject _npcs;
     [SerializeField] Transform[] _path;
+
+    public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
     void Update()
     {
@@ -50,6 +54,12 @@ public class GameManager : MonoBehaviour
         actualNpcNumber++;
 
         await SpawnCooldown();
+    }
+
+    public void ReciveMoney(int quantity)
+    {
+        actualMoney += quantity;
+        _moneyValueText.text = actualMoney.ToString();
     }
 
     private async Task SpawnCooldown()

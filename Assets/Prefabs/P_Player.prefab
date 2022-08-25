@@ -641,6 +641,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+--- !u!114 &4949676239061937735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2345479832400119149, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
+  m_PrefabInstance: {fileID: 7222675577293450026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5765699727134764144 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3765000977805477722, guid: e77f3e841106c23489b85f7fe22342c5, type: 3}
@@ -698,12 +709,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 973484782565722862, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 973484782565722862, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 973484782565722862, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1505730557
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059941818631244377, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059941818631244377, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059941818631244377, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1505730557
       objectReference: {fileID: 0}
     - target: {fileID: 3519936713865796268, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: layerMask.m_Bits
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253720313272420482, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253720313272420482, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253720313272420482, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1505730557
       objectReference: {fileID: 0}
     - target: {fileID: 4996265188061889951, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: m_RootOrder
@@ -802,9 +845,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: -1505730557
+  m_SortingLayer: 2
+  m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -860,19 +903,7 @@ MonoBehaviour:
     m_ActionId: e6724413-064a-4c00-ae69-d6d8f0406d0a
     m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7764131338928863475}
-        m_TargetAssemblyTypeName: PlayerMenuManager, Assembly-CSharp
-        m_MethodName: SetupMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 239ef8eb-8eef-4ef3-82d2-1546a454e347
     m_ActionName: Player/Inventory[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
@@ -908,6 +939,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clothesPanel: {fileID: 5765699728652529356}
   _bodyPartsManager: {fileID: 5765699728652529346}
+  _gameManager: {fileID: 0}
+  _bodyOptionsText:
+  - {fileID: 4949676239061937735}
+  - {fileID: 5765699728917401598}
+  - {fileID: 5765699728181610818}
+  - {fileID: 5765699727134764144}
   characterBody: {fileID: 11400000, guid: 6ed3a8b16cf3c744c985f1f932d67037, type: 2}
   inventoryParts:
   - bodyPartName: Hair

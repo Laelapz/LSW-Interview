@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _clothesPanel;
-    [SerializeField] private BodyPartsManager _bodyPartsManager; 
-    
+    [SerializeField] private BodyPartsManager _bodyPartsManager;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] TMP_Text[] _bodyOptionsText;
+
     public SO_CharacterBody characterBody;
     public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
@@ -20,7 +23,12 @@ public class PlayerMenuManager : MonoBehaviour
         if (!_clothesPanel.activeSelf)
         {
             _clothesPanel.SetActive(true);
-            _clothesPanel.GetComponent<BodyPartsSelector>()._bodyPartSelections = inventoryParts;
+            var bodyPartsSelector = _clothesPanel.GetComponent<BodyPartsSelector>()._bodyPartSelections = _gameManager.inventoryParts;
+            
+            bodyPartsSelector[0].bodyPartNameTextComponent = _bodyOptionsText[0];
+            bodyPartsSelector[1].bodyPartNameTextComponent = _bodyOptionsText[1];
+            bodyPartsSelector[2].bodyPartNameTextComponent = _bodyOptionsText[2];
+            bodyPartsSelector[3].bodyPartNameTextComponent = _bodyOptionsText[3];
         }
         else
         {

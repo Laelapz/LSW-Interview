@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623026f48d5012044a0f283a95c0c0c0, type: 3}
+  m_Name: Bottom 4
+  m_EditorClassIdentifier: 
+  bodyPartName: Pastel Pants
+  bodyPartId: 4
+  allBodyPartsAnimations:
+  - {fileID: 7400000, guid: da71de135f5ffbe47ab799f28d8595c0, type: 2}
+  - {fileID: 7400000, guid: 73135400f4d0d5e439cc4cd28cfa760f, type: 2}
+  - {fileID: 7400000, guid: aacd7ffd495ab73459bac0583f7bbbc2, type: 2}
+  - {fileID: 7400000, guid: bfadc8752a718284c9b31469f4a47a63, type: 2}
+  - {fileID: 7400000, guid: d5181ae42c57d8f4e928e2e2c6c5e2f9, type: 2}

@@ -25,7 +25,6 @@ public class BodyPartsManager : MonoBehaviour
 
     public void UpdateBodyParts()
     {
-        print("Atualizando");
         for (int partIndex = 0; partIndex < _bodyPartTypes.Length; partIndex++)
         {
 

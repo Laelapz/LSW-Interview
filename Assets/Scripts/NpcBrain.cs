@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 using System.Threading.Tasks;
 
 public class NpcBrain : MonoBehaviour, IInteractable
@@ -18,10 +20,17 @@ public class NpcBrain : MonoBehaviour, IInteractable
     [SerializeField] Animator _animator;
     [SerializeField] GameObject _clothesPanel;
     [SerializeField] Rigidbody2D _rigidbody;
+    [SerializeField] Image _image;
+    [SerializeField] Sprite[] _moodIcons;
+    [SerializeField] TMP_Text[] _bodyOptionsText;
     public Transform[] path;
+    
+    [SerializeField] private float moveSpeed = 2f;
 
     private bool _isWalking = false;
+    private bool _buy = false;
     private bool _followingPath = true;
+    private int waypointIndex = 0;
     private int moodState = 3;
     private float _speed = 2f;
     private Vector2 _movement = Vector2.zero;
@@ -31,7 +40,6 @@ public class NpcBrain : MonoBehaviour, IInteractable
     public bool canWalk = true;
     public GameManager gameManager;
     public SO_CharacterBody npcBody;
-    public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
     private void Start()
     {
@@ -58,11 +66,11 @@ public class NpcBrain : MonoBehaviour, IInteractable
         
         if (collision.collider != null)
         {
-            _interactableAnimation.ShowIcon();
+            _image.color = new Color(1, 1, 1, 1);
         }
         else
         {
-            _interactableAnimation.HideIcon();
+            _image.color = new Color(1, 1, 1, 0);
         }
 
         _previousPosition = transform.position;
@@ -79,9 +87,6 @@ public class NpcBrain : MonoBehaviour, IInteractable
 
 
     }
-    [SerializeField]
-    private float moveSpeed = 2f;
-    private int waypointIndex = 0;
 
     private async void Move()
     {
@@ -149,25 +154,41 @@ public class NpcBrain : MonoBehaviour, IInteractable
 
     private async Task WaitForAttendance()
     {
+        if (_buy) return;
+
         if(moodState <= 0 )
         {
-            Transform temp = this.path[0];
-            this.path[0] = path[2];
-            this.path[2] = temp;
-            this.waypointIndex = 0;
-
-            this._followingPath = true;
+            InvertPathToFollow();
             return;
         }
 
         float timeEnd = Time.time + 10;
+        _interactableAnimation.SetIcon(_moodIcons[moodState-1]);
+        _interactableAnimation.ShowIcon();
 
         while (Time.time < timeEnd)
         {
             await Task.Yield();
         }
+
         moodState--;
         await WaitForAttendance();
+    }
+
+    private void InvertPathToFollow()
+    {
+        Transform temp = this.path[0];
+        this.path[0] = path[2];
+        this.path[2] = temp;
+        this.waypointIndex = 0;
+
+        this._followingPath = true;
+        _interactableAnimation.HideIcon();
+    }
+
+    private void PayPlayer()
+    {
+        gameManager.ReciveMoney(moodState * 20);
     }
 
     private async Task StopWalking()
@@ -185,14 +206,25 @@ public class NpcBrain : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (moodState < 0 || _followingPath) return;
+        
         canWalk = false;
+        _buy = true;
         _clothesPanel.SetActive(true);
-        _clothesPanel.GetComponent<BodyPartsSelector>()._bodyPartSelections = inventoryParts;
+        var bodyPartsManager = _clothesPanel.GetComponent<BodyPartsSelector>();
+        bodyPartsManager._bodyPartSelections = gameManager.inventoryParts;
+        bodyPartsManager._bodyPartSelections[0].bodyPartNameTextComponent = _bodyOptionsText[0];
+        bodyPartsManager._bodyPartSelections[1].bodyPartNameTextComponent = _bodyOptionsText[1];
+        bodyPartsManager._bodyPartSelections[2].bodyPartNameTextComponent = _bodyOptionsText[2];
+        bodyPartsManager._bodyPartSelections[3].bodyPartNameTextComponent = _bodyOptionsText[3];
     }
 
     public void ClosePanel()
     {
         canWalk = true;
         _clothesPanel.SetActive(false);
+        InvertPathToFollow();
+        PayPlayer();
+        moodState = 0;
     }
 }

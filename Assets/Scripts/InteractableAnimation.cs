@@ -14,6 +14,11 @@ public class InteractableAnimation : MonoBehaviour
         transform.position = _newPosition;
     }
 
+    public void SetIcon(Sprite sprite)
+    {
+        _spriteRenderer.sprite = sprite;
+    }
+
     public void ShowIcon()
     {
         _spriteRenderer.color = new Color(1, 1, 1, 1);

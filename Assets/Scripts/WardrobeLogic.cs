@@ -24,7 +24,6 @@ public class WardrobeLogic : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        print("opa");
         _playerMenuManager.SetupMenu();
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623026f48d5012044a0f283a95c0c0c0, type: 3}
+  m_Name: Top 4
+  m_EditorClassIdentifier: 
+  bodyPartName: Overhall
+  bodyPartId: 4
+  allBodyPartsAnimations:
+  - {fileID: 7400000, guid: 491524e6062393842bc83608c1d6e985, type: 2}
+  - {fileID: 7400000, guid: 723d1e8ceb79f674eb2944067b1e7de9, type: 2}
+  - {fileID: 7400000, guid: 3ef5645d05514644eb6a31bee46f9744, type: 2}
+  - {fileID: 7400000, guid: bafc52fc8956ff1439ea13a749a0994b, type: 2}
+  - {fileID: 7400000, guid: 03104425fce9c4d4e821c6d077df9d61, type: 2}
