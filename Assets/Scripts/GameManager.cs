@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Threading.Tasks;
 using TMPro;
 
@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private bool _isOpened = false;
     private bool _canSpawnNpc = true;
     public int actualMoney = 0;
+    public int clothesPrice = 10;
     public int actualNpcNumber = 0;
     public int maxNpcCapacity = 5;
 
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _npcs;
     [SerializeField] Transform[] _path;
     [SerializeField] ShopManager _shopManager;
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] Image _musicIcon;
+    [SerializeField] Sprite[] _musicOnAndOff;
 
     public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
@@ -99,12 +103,26 @@ public class GameManager : MonoBehaviour
 
     public void UpgradeClothes()
     {
-        if (actualMoney < _shopManager.upgradeCosts[1]) return;
+        if (actualMoney < _shopManager.upgradeCosts[0]) return;
 
-        ReciveMoney(-_shopManager.upgradeCosts[1]);
+        ReciveMoney(-_shopManager.upgradeCosts[0]);
         instantiateCooldown -= 1f;
         _shopManager.ClothesUpgradePrice();
 
         if (instantiateCooldown == 1f) _shopManager.DeactivateClothesButton();
+    }
+
+    public void ChangeMusicMute()
+    {
+        _audioSource.mute = !_audioSource.mute;
+
+        if (!_audioSource.mute)
+        {
+            _musicIcon.sprite = _musicOnAndOff[0];
+        }
+        else
+        {
+            _musicIcon.sprite = _musicOnAndOff[1];
+        }
     }
 }
