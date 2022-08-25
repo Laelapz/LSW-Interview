@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589225543392309478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.55, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8993966180584781451}
@@ -1008,6 +1008,7 @@ MonoBehaviour:
   _animator: {fileID: 7601530052660792879}
   _clothesPanel: {fileID: 2905306307344611064}
   _rigidbody: {fileID: 4507867061942187846}
+  path: []
   canWalk: 1
   npcBody: {fileID: 0}
   inventoryParts:
@@ -1039,6 +1040,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 2fbba2ab72cddaa479f74f895a104e34, type: 2}
     bodyPartNameTextComponent: {fileID: 2905306309114164292}
     bodyPartCurrentIndex: 0
+  moveSpeed: 2
 --- !u!95 &7601530052660792879 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5834623803471707451, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}

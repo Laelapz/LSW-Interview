@@ -18,10 +18,14 @@ public class NpcBrain : MonoBehaviour, IInteractable
     [SerializeField] Animator _animator;
     [SerializeField] GameObject _clothesPanel;
     [SerializeField] Rigidbody2D _rigidbody;
+    public Transform[] path;
 
     private bool _isWalking = false;
+    private bool _followingPath = true;
     private float _speed = 2f;
     private Vector2 _movement = Vector2.zero;
+    private Vector2 _previousPosition = Vector2.zero;
+    
 
     public bool canWalk = true;
     public SO_CharacterBody npcBody;
@@ -29,7 +33,8 @@ public class NpcBrain : MonoBehaviour, IInteractable
 
     private void Start()
     {
-       
+        transform.position = path[waypointIndex].transform.position;
+
         npcBody = ScriptableObject.CreateInstance("SO_CharacterBody") as SO_CharacterBody;
 
         var hairPart = hairBodyParts[Random.Range(0, hairBodyParts.Length)];
@@ -57,14 +62,53 @@ public class NpcBrain : MonoBehaviour, IInteractable
         {
             _interactableAnimation.HideIcon();
         }
-        WalkInRandomDirection();
 
-        _rigidbody.velocity = _movement * _speed;
+        _previousPosition = transform.position;
 
+        if (_followingPath)
+        {
+            Move();
         }
+        else
+        {
+            WalkInRandomDirection();
+            _rigidbody.velocity = _movement * _speed;
+        }
+
+
+    }
+    [SerializeField]
+    private float moveSpeed = 2f;
+    private int waypointIndex = 0;
+
+    private void Move()
+    {
+        if (waypointIndex <= path.Length - 1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position,
+               path[waypointIndex].transform.position,
+               moveSpeed * Time.deltaTime);
+
+            _movement.x = (transform.position.x - _previousPosition.x ) / Time.deltaTime;
+            _movement.y = (transform.position.y - _previousPosition.y) / Time.deltaTime;
+
+            UpdateAnimatorVariables();
+
+            if (transform.position == path[waypointIndex].transform.position)
+            {
+                waypointIndex += 1;
+            }
+        }
+        else
+        {
+            _followingPath = false;
+        }
+    }
 
     private async void WalkInRandomDirection()
     {
+        if (_isWalking) return;
+
         if (!canWalk)
         {
             _movement.x = 0; _movement.y = 0;
@@ -73,7 +117,6 @@ public class NpcBrain : MonoBehaviour, IInteractable
             return;
         }
 
-        if (_isWalking ) return;
 
         _movement.x = Random.Range(-1, 2);
         _movement.y = Random.Range(-1, 2);
