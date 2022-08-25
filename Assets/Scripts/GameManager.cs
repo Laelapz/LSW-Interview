@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text _moneyValueText;
     [SerializeField] GameObject _npcs;
     [SerializeField] Transform[] _path;
+    [SerializeField] ShopManager _shopManager;
 
     public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
@@ -72,5 +73,38 @@ public class GameManager : MonoBehaviour
         }
 
         _canSpawnNpc = true;
+    }
+
+    public void UpgradeSpawnSpeed()
+    {
+        if (actualMoney < _shopManager.upgradeCosts[2]) return;
+
+        ReciveMoney(-_shopManager.upgradeCosts[2]);
+        instantiateCooldown -= 1f;
+        _shopManager.SpawnSpeedUpgradePrice();
+
+        if (instantiateCooldown == 1f) _shopManager.DeactivateSpeedButton();
+    }
+
+    public void UpgradeShopCapacity()
+    {
+        if (actualMoney < _shopManager.upgradeCosts[1]) return;
+
+        ReciveMoney(-_shopManager.upgradeCosts[1]);
+        maxNpcCapacity += 5;
+        _shopManager.ShopCapacityUpgradePrice();
+
+        if (maxNpcCapacity >= 20) _shopManager.DeactivateCapacityButton();
+    }
+
+    public void UpgradeClothes()
+    {
+        if (actualMoney < _shopManager.upgradeCosts[1]) return;
+
+        ReciveMoney(-_shopManager.upgradeCosts[1]);
+        instantiateCooldown -= 1f;
+        _shopManager.ClothesUpgradePrice();
+
+        if (instantiateCooldown == 1f) _shopManager.DeactivateClothesButton();
     }
 }
