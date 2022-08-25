@@ -23,6 +23,8 @@ public class NpcBrain : MonoBehaviour, IInteractable
     [SerializeField] Image _image;
     [SerializeField] Sprite[] _moodIcons;
     [SerializeField] TMP_Text[] _bodyOptionsText;
+    public Collider2D _door;
+    [SerializeField] Collider2D myCollider;
     public Transform[] path;
     
     [SerializeField] private float moveSpeed = 2f;
@@ -43,6 +45,7 @@ public class NpcBrain : MonoBehaviour, IInteractable
 
     private void Start()
     {
+        myCollider.enabled = false;
         transform.position = path[waypointIndex].transform.position;
 
         npcBody = ScriptableObject.CreateInstance("SO_CharacterBody") as SO_CharacterBody;
@@ -115,6 +118,7 @@ public class NpcBrain : MonoBehaviour, IInteractable
             }
             else
             {
+                myCollider.enabled = true;
                 _followingPath = false;
                 await WaitForAttendance();
 
@@ -182,6 +186,7 @@ public class NpcBrain : MonoBehaviour, IInteractable
         this.path[2] = temp;
         this.waypointIndex = 0;
 
+        myCollider.enabled = false;
         this._followingPath = true;
         _interactableAnimation.HideIcon();
     }

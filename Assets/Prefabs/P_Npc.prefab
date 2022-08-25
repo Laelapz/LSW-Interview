@@ -1055,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2922923315013677086, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3519936713865796268, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
       propertyPath: layerMask.m_Bits
@@ -1121,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7709800999784913575, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
 --- !u!114 &675509071820237240 stripped
@@ -1134,6 +1138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2a8667e6646474da3443282ee78d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &3651010928638468814 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 805105542998856154, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
+  m_PrefabInstance: {fileID: 4145194164058174228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3779415471423327720 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1005884336755982076, guid: 91fbff3cd7ec93049ada559bec14297b, type: 3}
@@ -1202,6 +1211,8 @@ MonoBehaviour:
   - {fileID: 2905306307607943114}
   - {fileID: 2905306307945337206}
   - {fileID: 2905306309114164292}
+  _door: {fileID: 0}
+  myCollider: {fileID: 3651010928638468814}
   path: []
   moveSpeed: 2
   canWalk: 1
