@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
 
     private bool _isOpened = false;
     private bool _canSpawnNpc = true;
-    private int _actualNpcNumber = 0;
-    private int _maxNpcCapacity = 5;
+    public int actualNpcNumber = 0;
+    public int maxNpcCapacity = 5;
 
     public float instantiateCooldown = 10f;
 
@@ -39,13 +39,15 @@ public class GameManager : MonoBehaviour
 
     public async void InstantiateNpc()
     {
-        if (_actualNpcNumber >= _maxNpcCapacity || !_canSpawnNpc || !_isOpened) return;
+        if (actualNpcNumber >= maxNpcCapacity || !_canSpawnNpc || !_isOpened) return;
 
         GameObject npc = Instantiate(_npcs, _path[0].transform);
         _canSpawnNpc = false;
-        npc.GetComponent<NpcBrain>().path = _path;
+        var npcBrain = npc.GetComponent<NpcBrain>();
+        npcBrain.path = (Transform[])_path.Clone();
+        npcBrain.gameManager = this;
 
-        _actualNpcNumber++;
+        actualNpcNumber++;
 
         await SpawnCooldown();
     }

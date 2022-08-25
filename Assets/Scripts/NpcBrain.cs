@@ -22,12 +22,14 @@ public class NpcBrain : MonoBehaviour, IInteractable
 
     private bool _isWalking = false;
     private bool _followingPath = true;
+    private int moodState = 3;
     private float _speed = 2f;
     private Vector2 _movement = Vector2.zero;
     private Vector2 _previousPosition = Vector2.zero;
     
 
     public bool canWalk = true;
+    public GameManager gameManager;
     public SO_CharacterBody npcBody;
     public List<BodyPartsSelector.BodyPartSelection> inventoryParts;
 
@@ -81,7 +83,7 @@ public class NpcBrain : MonoBehaviour, IInteractable
     private float moveSpeed = 2f;
     private int waypointIndex = 0;
 
-    private void Move()
+    private async void Move()
     {
         if (waypointIndex <= path.Length - 1)
         {
@@ -101,7 +103,18 @@ public class NpcBrain : MonoBehaviour, IInteractable
         }
         else
         {
-            _followingPath = false;
+            if (moodState <= 0)
+            {
+                gameManager.actualNpcNumber--;
+                Destroy(gameObject);
+            }
+            else
+            {
+                _followingPath = false;
+                await WaitForAttendance();
+
+            }
+
         }
     }
 
@@ -132,6 +145,29 @@ public class NpcBrain : MonoBehaviour, IInteractable
         _animator.SetFloat("Horizontal", _movement.x);
         _animator.SetFloat("Vertical", _movement.y);
         _animator.SetFloat("Speed", _movement.sqrMagnitude);
+    }
+
+    private async Task WaitForAttendance()
+    {
+        if(moodState <= 0 )
+        {
+            Transform temp = this.path[0];
+            this.path[0] = path[2];
+            this.path[2] = temp;
+            this.waypointIndex = 0;
+
+            this._followingPath = true;
+            return;
+        }
+
+        float timeEnd = Time.time + 10;
+
+        while (Time.time < timeEnd)
+        {
+            await Task.Yield();
+        }
+        moodState--;
+        await WaitForAttendance();
     }
 
     private async Task StopWalking()
